@@ -1,0 +1,36 @@
+.App {
+  background-color: #202020;}
+
+.page {
+  margin: 0 auto;
+  max-width: 1140px;
+}
+
+
+.page-main {
+  margin: 0 auto;
+  max-width: 1140px;
+}
+
+@media (max-width: 1200px) {
+  .page {
+    margin: 0 30px;
+  }
+
+  .page-main {
+    margin: 0 50px;
+  }
+}
+
+@media (max-width: 605px) {
+  .page-main {
+    margin: 0 18px;
+  }
+}
+
+@media (max-width: 360px) {
+  .page {
+    margin: 0 auto;
+    max-width: 292px;
+  }
+}

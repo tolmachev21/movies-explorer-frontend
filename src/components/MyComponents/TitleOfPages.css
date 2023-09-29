@@ -1,0 +1,18 @@
+.component__title {
+  margin: 0;
+  padding: 0 0 23px 0;
+  color: #fff;
+  font-family: 'Inter', 'Arial', sans-serif;
+  font-size: 22px;
+  font-weight: 400;
+  line-height: 27px;
+  border-bottom: 1px solid #DADADA;
+}
+
+@media (max-width: 605px) {
+  .component__title {
+    padding: 0 0 28px 0;
+    font-size: 18px;
+    line-height: 22px;
+  }
+}
