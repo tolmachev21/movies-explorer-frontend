@@ -5,7 +5,7 @@ import TitleOfPages from "../../MyComponents/TitleOfPages";
 function Techs() {
   return (
     <div className="techs-wrapper">
-      <div className="techs">
+      <div className="techs" id="techs">
         <TitleOfPages title="Технологии" />
         <h3 className="techs__subtitle">7 технологий</h3>
         <p className="techs__text">На курсе веб-разработки мы освоили технологии, которые применили в дипломном проекте.</p>

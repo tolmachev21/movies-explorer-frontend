@@ -1,0 +1,136 @@
+.student {
+    padding: 110px 0 100px 0;
+}
+
+.student__container {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: space-between;
+}
+
+.student__container-text {
+    display: flex;
+    flex-direction: column;
+    max-width: 600px;
+}
+
+.student__name {
+    margin: 0;
+    padding: 66px 0 0 0;
+    display: inline-block;
+    color: #fff;
+    font-family: 'Inter', 'Arial', sans-serif;
+    font-size: 50px;
+    font-weight: 400;
+    line-height: 58px;
+}
+
+.student__about {
+    margin: 0;
+    padding: 18px 0 0 0;
+    display: inline-block;
+    color: #fff;
+    font-family: 'Inter', 'Arial', sans-serif;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 20px;
+}
+
+.student__text {
+    margin: 0;
+    padding: 26px 0 100px 0;
+    display: inline-block;
+    color: #fff;
+    font-family: 'Inter', 'Arial', sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 22px;
+}
+
+.student__link {
+    margin: 0;
+    padding: 0;
+    color: #fff;
+    font-family: 'Inter', 'Arial', sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 17px;
+}
+
+.student__image {
+    width: 270px;
+    height: auto;
+    align-self: center;
+}
+
+@media (max-width: 1000px) {
+    .student {
+        padding: 90px 0;
+    }
+
+    .student__container-text {
+        max-width: 364px;
+    }
+
+    .student__name { 
+        font-size: 40px;
+        line-height: 40px;
+    }
+
+    .student__about {
+        padding: 16px 0 0 0;
+        font-size: 12px;
+        line-height: 18px;
+    }
+
+    .student__text {
+        padding: 20px 0 87px 0;
+        font-size: 12px;
+        line-height: 18px;
+    }
+
+    .student__image {
+        width: 255px;
+    }
+}
+
+@media (max-width: 728px) {
+    .student__container {
+        flex-direction: column-reverse;
+    }
+
+    .student__container-text {
+        max-width: inherit;
+    }
+
+    .student__image {
+        padding: 60px 0 0 0;
+        width: 292px;
+    }
+}
+
+@media (max-width:605px) {
+    .student {
+        padding: 70px 0;
+    }
+
+    .student__name {
+        padding: 40px 0 0 0;
+        font-size: 30px;
+        line-height: 37px;
+    }
+
+    .student__about {
+        padding: 20px 0 0 0;
+        font-size: 11px;
+        line-height: 16px;
+    }
+
+    .student__text {
+        padding: 20px 0 40px 0;
+        font-size: 11px;
+        line-height: 16px;
+    }
+
+}

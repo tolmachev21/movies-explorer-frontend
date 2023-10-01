@@ -5,6 +5,7 @@ import { useState } from 'react';
 import NavTab from '../Main/NavTab/NavTab';
 import Promo from '../Main/Promo/Promo';
 import Techs from '../Main/Techs/Techs';
+import Main from '../Main/Main';
 
 
 function App() {
@@ -16,6 +17,7 @@ function App() {
       <NavTab />
       <Promo />
       <Techs />
+      <Main />
       <Footer />
     </div>
   );

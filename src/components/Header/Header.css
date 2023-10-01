@@ -5,11 +5,11 @@
 
 .header__logo {
   margin: 0;
-  padding: 18px 0 18px 0;
+  padding: 18px 0;
 }
 
 .header__button-account {
-  margin: 21px 0 21px 0;
+  margin: 21px 0;
   padding: 0;
   width: 100px;
   height: 32px;
@@ -61,7 +61,7 @@
 
 .header__authorization {
   margin: 0;
-  padding: 8px 20px 8px 20px;
+  padding: 8px 20px;
   color: #000;
   background-color: #3DDC84;
   text-align: center;
@@ -83,7 +83,7 @@
   }
 
   .header__authorization {
-    padding: 5px 12px 5px 12px;
+    padding: 5px 12px;
     font-size: 10px;
   }
 
