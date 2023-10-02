@@ -1,6 +1,6 @@
 import React from "react";
 import './Promo.css';
-import TitleOfPages from "../../MyComponents/TitleOfPages";
+import TitleOfPages from "../../MyComponents/TitleOfPages/TitleOfPages";
 
 function Promo() {
   return (

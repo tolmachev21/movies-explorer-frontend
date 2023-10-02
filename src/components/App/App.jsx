@@ -1,24 +1,69 @@
 import './App.css';
+import { useState } from 'react';
+import { Routes, Route, Navigate, Router } from 'react-router-dom';
+import CurrentUserContext from '../../contexts/CurrentUserContext.js'
+
 import Footer from '../Footer/Footer.jsx'
 import Header from '../Header/Header.jsx';
-import { useState } from 'react';
-import NavTab from '../Main/NavTab/NavTab';
-import Promo from '../Main/Promo/Promo';
-import Techs from '../Main/Techs/Techs';
 import Main from '../Main/Main';
-
+import Profile from '../Profile/Profile';
+import Register from '../Register/Register';
+import Login from '../Login/Login';
+import NotFound from '../NotFound/NotFound';
+import Movies from '../Movies/Movies';
+import SavedMovies from '../SavedMovies/SavedMovies';
 
 function App() {
+
+  const [currentUser, setCurrentUser] = useState({ name: 'Viktor', email: 'tolmach0221@ya.ru' });
   const [loggedIn, setLoggedIn] = useState(true);
 
   return (
     <div className="App">
-      <Header loggedIn={loggedIn} />
-      <NavTab />
-      <Promo />
-      <Techs />
-      <Main />
-      <Footer />
+      <CurrentUserContext.Provider value={currentUser}>
+        <Routes>
+
+          <Route path="/" element={
+            <>
+              <Header loggedIn={loggedIn} />
+              <Main />
+              <Footer />
+            </>
+          } />
+
+          <Route path="/movies" element={
+            <>
+              <Header loggedIn={loggedIn} />
+              <Movies />
+              <Footer />
+            </>
+          } />
+
+          <Route path="/saved-movies" element={
+            <>
+              <Header loggedIn={loggedIn} />
+              <SavedMovies />
+              <Footer />
+            </>
+          } />
+
+
+          <Route path="/profile" element={
+            <>
+              <Header loggedIn={loggedIn} />
+              <Profile />
+            </>
+          } />
+
+          <Route path="/signup" element={<Register nameForm='signup' handleLogin="" />} />
+
+          <Route path="/signin" element={<Login nameForm='signin' handleRegister="" />} />
+
+          <Route path="*" element={<NotFound />} />
+
+        </Routes>
+      </CurrentUserContext.Provider>
+
     </div>
   );
 }

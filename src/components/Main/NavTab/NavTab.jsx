@@ -9,7 +9,7 @@ function NavTab() {
         <ul className="navigate__list">
           <li className="navigate__item"><a className="navigate__link" href="#promo">О проекте</a></li>
           <li className="navigate__item"><a className="navigate__link" href="#techs">Технологии</a></li>
-          <li className="navigate__item"><a className="navigate__link" href="#about">Студент</a></li>
+          <li className="navigate__item"><a className="navigate__link" href="#about-me">Студент</a></li>
         </ul>
       </nav>
     </div>
