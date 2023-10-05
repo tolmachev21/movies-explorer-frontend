@@ -34,7 +34,7 @@ function App() {
           <Route path="/movies" element={
             <>
               <Header loggedIn={loggedIn} />
-              <Movies />
+              <Movies handleSearch="" />
               <Footer />
             </>
           } />

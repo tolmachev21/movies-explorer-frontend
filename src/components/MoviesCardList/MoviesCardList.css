@@ -1,0 +1,10 @@
+.movies-card-list {
+    margin: 0;
+    padding: 70px 0 26px 0;
+    max-width: 1140px;
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+    grid-auto-columns: 1fr;
+    row-gap: 60px;
+    column-gap: 30px;
+}
