@@ -1,17 +1,14 @@
 import React from "react";
 import './MoviesCardList.css';
 import MoviesCard from "../MoviesCard/MoviesCard";
-import Preloader from '../Movies/Preloader/Preloader.jsx'
 
-
-
-function MoviesCardList() {
+function MoviesCardList({ name, cardMovies, cardSavedMovie }) {
   return (
-    <div className="movies-card-list">
-        <MoviesCard />
-        <MoviesCard />
-        <MoviesCard />
-    </div>
+    <section className="movies-card-list">
+      {name === "SavedMovies" ? <MoviesCard cardSavedMovie={cardSavedMovie} /> : <MoviesCard cardMovies={cardMovies} />}
+      {name === "SavedMovies" ? <MoviesCard cardSavedMovie={cardSavedMovie} /> : <MoviesCard cardMovies={cardMovies} />}
+      {name === "SavedMovies" ? <MoviesCard cardSavedMovie={cardSavedMovie} /> : <MoviesCard cardMovies={cardMovies} />}
+    </section>
   );
 };
 

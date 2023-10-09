@@ -4,7 +4,7 @@ import TitleOfPages from "../../MyComponents/TitleOfPages/TitleOfPages";
 
 function Techs() {
   return (
-    <div className="techs-wrapper">
+    <section className="techs-wrapper">
       <div className="techs" id="techs">
         <TitleOfPages title="Технологии" />
         <h3 className="techs__subtitle">7 технологий</h3>
@@ -19,9 +19,8 @@ function Techs() {
           <li className="techs__item">mongoDB</li>
         </ul>
       </div>
-    </div>
+    </section>
   )
-
 };
 
 export default Techs;

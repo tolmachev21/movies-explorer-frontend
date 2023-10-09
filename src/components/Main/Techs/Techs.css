@@ -88,7 +88,7 @@
   .techs__item {
     max-width: 84px;
     font-size: 12px;
-    line-height: 14.5px;
+    line-height: 15px;
   }
 }
 
@@ -116,6 +116,5 @@
   .techs {
     margin: 0 18px;
     padding: 70px 0;
-    max-width: 292px;
   }
 }

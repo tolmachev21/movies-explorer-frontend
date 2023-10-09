@@ -48,7 +48,7 @@ function SectionRegisterOrLogin({ nameForm, userName, email, password, handleCha
               autoComplete="off"></input>
           </label>
         </fieldset>
-        <button className="registration-or-login__button" type="submit">{nameForm === 'signup' ? 'Зарегистрироваться' : 'Войти'}</button>
+        <button className={`registration-or-login__button ${nameForm === 'signup' ? "" : "registration-or-login__button-signin"}`} type="submit">{nameForm === 'signup' ? 'Зарегистрироваться' : 'Войти'}</button>
         <p className="registration-or-login__subtext">{nameForm === 'signup' ? 'Уже зарегистрировны?' : 'Ещё не зарегистрированы?'} <Link className="registration-or-login__link" to={nameForm === 'signup' ? '/signin' : '/signup'} replace>{nameForm === 'signup' ? 'Войти' : 'Регистрация'}</Link></p>
       </form>
     </section>

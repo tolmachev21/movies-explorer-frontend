@@ -5,8 +5,8 @@ import logo from '../../../images/logo.svg'
 
 function LogoOfPages() {
   return (
-      <Link to="/">
-        <img className="register__logo" src={logo} alt="Логотип" />  
+      <Link to="/" className="component__logo-link">
+        <img className="component__logo" src={logo} alt="Логотип" />  
       </Link> 
   );
 };

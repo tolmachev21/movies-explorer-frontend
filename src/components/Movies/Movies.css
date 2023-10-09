@@ -1,5 +1,9 @@
-.movies__container-again {
+.movies {
   margin: 0;
+  padding: 0;
+}
+
+.movies__container-again {
   padding: 50px 0 80px 0;
   display: flex;
   justify-content: center;
@@ -8,6 +12,8 @@
 .movies__button-agian {
   margin: 0;
   padding: 11px 60px 9px 60px;
+  width: 200px;
+  box-sizing: content-box;
   background-color: #202020;
   color: #fff;
   font-family: 'Inter', 'Arial', sans-serif;
@@ -17,4 +23,15 @@
   text-align: center;
   border: 1px solid #424242;
   border-radius: 6px;
+}
+
+.movies__button-agian:hover {
+  opacity: 70%;
+}
+
+@media (max-width: 400px) {
+  .movies__button-agian {
+    margin: 0 auto;
+    padding: 11px 20px 9px ;
+  }
 }

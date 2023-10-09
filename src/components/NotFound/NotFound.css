@@ -33,13 +33,18 @@
   margin: 0;
   padding: 0;
   color: #4285F4;
-  text-align: center;
   text-decoration: none;
+  text-align: center;
   font-family: 'Inter', 'Arial', sans-serif;
   font-size: 14px;
   font-weight: 400;
   line-height: 17px;
 }
+
+.not-found__link:hover {
+opacity: 70%;
+}
+
 
 @media (max-width: 420px) {
   .not-found {

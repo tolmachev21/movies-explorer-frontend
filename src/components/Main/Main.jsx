@@ -17,7 +17,6 @@ function Main() {
       <AboutMe />
       <Portfolio />
     </>
-
   )
 };
 

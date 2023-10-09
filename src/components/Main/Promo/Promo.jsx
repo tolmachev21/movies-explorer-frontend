@@ -4,7 +4,7 @@ import TitleOfPages from "../../MyComponents/TitleOfPages/TitleOfPages";
 
 function Promo() {
   return (
-    <div className="promo page-main" id="promo">
+    <section className="promo page-main" id="promo">
       <TitleOfPages title="О проекте" />
       <div className="promo__container">
         <h3 className="promo__subtitle">Дипломный проект включал 5 этапов</h3>
@@ -18,7 +18,7 @@ function Promo() {
         <p className="promo__time-bar-text promo__time-bar-text_color_black">Back-end</p>
         <p className="promo__time-bar-text promo__time-bar-text_color_black">Front-end</p>
       </div>
-    </div>
+    </section>
   )
 };
 

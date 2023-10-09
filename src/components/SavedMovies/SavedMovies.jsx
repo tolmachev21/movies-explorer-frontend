@@ -3,11 +3,11 @@ import './SavedMovies.css';
 import SearchForm from "../SearchForm/SearchForm";
 import MoviesCardList from "../MoviesCardList/MoviesCardList.jsx";
 
-function SavedMovies() {
+function SavedMovies({ name, cardSavedMovie }) {
   return (
-    <section className="page">
+    <section className="saved-movies">
       <SearchForm />
-      <MoviesCardList />
+      <MoviesCardList name={name} cardSavedMovie={cardSavedMovie} />
       <div className="saved-movies__container"></div>
     </section>
   )

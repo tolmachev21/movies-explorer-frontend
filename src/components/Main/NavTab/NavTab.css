@@ -16,7 +16,7 @@
   font-weight: 400;
   font-size: 50px;
   line-height: 58px;
-  letter-spacing: -2px;
+  letter-spacing: -1px;
 }
 
 .navigate__menu {}
@@ -50,19 +50,21 @@
   line-height: 16px;
 }
 
+.navigate__link:hover {
+  opacity: 70%;
+}
+
 @media (max-width: 1240px) {
   .navigate {
     margin: 20px 20px 0 20px;
-
   }
 }
 
 @media (max-width: 800px) {
   .navigate__title {
-    padding: 350px 24px 324px 24px;
+    padding: 350px 24px 314px 24px;
     font-size: 40px;
     line-height: 52px;
-
   }
 }
 
@@ -95,7 +97,7 @@
   }
 
   .navigate__link {
-    font-size: 12px;
+    font-size: 10px;
     line-height: 16px;
   }
 }

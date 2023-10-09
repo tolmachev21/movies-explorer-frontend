@@ -3,7 +3,7 @@ import './NavTab.css';
 
 function NavTab() {
   return (
-    <div className="navigate">
+    <section className="navigate">
       <h1 className="navigate__title">Учебный проект студента факультета Веб&#8209;разработки.</h1>
       <nav className="navigate__menu">
         <ul className="navigate__list">
@@ -12,7 +12,7 @@ function NavTab() {
           <li className="navigate__item"><a className="navigate__link" href="#about-me">Студент</a></li>
         </ul>
       </nav>
-    </div>
+    </section>
   )
 };
 
