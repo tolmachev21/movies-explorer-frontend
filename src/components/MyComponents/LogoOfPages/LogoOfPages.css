@@ -1,11 +1,11 @@
-.component__logo-link { 
+.registration-or-login__logo-link {
   margin: 0;
   padding: 0;
   text-decoration: none;
   height: 38px;
 }
 
-.component__logo {
+.registration-or-login__logo {
   margin: 0;
   padding: 0;
   width: 38px;
@@ -13,7 +13,7 @@
 }
 
 @media (max-width: 456px) {
-  .component__logo-link {
+  .registration-or-login__logo-link {
     display: flex;
     justify-content: center;
   }

@@ -57,7 +57,10 @@
   line-height: 16px;
   border: none;
   border-radius: 8px;
-  outline: none;
+}
+
+.registration-or-login__input:focus {
+  outline: 1px solid #4285F4;
 }
 
 .registration-or-login__button {
@@ -101,6 +104,10 @@
   font-size: 14px;
   font-weight: 400;
   line-height: 17px;
+}
+
+.registration-or-login__link:hover {
+  opacity: 70%;
 }
 
 @media (max-width: 456px) {

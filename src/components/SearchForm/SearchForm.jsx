@@ -19,7 +19,7 @@ function SearchForm({ handleSearch }) {
   return (
     <div className="search page">
       <form className="search__form" role="search" onSubmit={onSearch}>
-        <fieldset className="search-field__fieldset">
+        <fieldset className="search__fieldset">
           <input className="search__input"
             id="search"
             type="search"
@@ -36,7 +36,7 @@ function SearchForm({ handleSearch }) {
             src={submitButton}
             alt="Кнопка отправки формы" />
         </fieldset>
-        <fieldset className="seacrch-filter__fieldset">
+        <fieldset className="search__fieldset">
           <input className="search__input-radio"
             id="short-film"
             type="checkbox"

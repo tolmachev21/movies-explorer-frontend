@@ -11,7 +11,7 @@
     align-items: stretch;
 }
 
-.search-field__fieldset {
+.search__fieldset {
     margin: 0;
     padding: 0;
     border: none;
@@ -34,8 +34,8 @@
     border-radius: 8px;
 }
 
-.search__input {
-    outline: none;
+.search__input:focus {
+    outline: 1px solid #3456F3;
 }
 
 .search__submit-button {
@@ -48,7 +48,7 @@
     opacity: 70%;
 }
 
-.seacrch-filter__fieldset {
+.search__fieldset {
     margin: 0;
     padding: 28px 0 0 0;
     display: flex;
