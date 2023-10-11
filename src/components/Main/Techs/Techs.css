@@ -8,6 +8,17 @@
   max-width: 1140px;
 }
 
+.techs__title {
+  margin: 0;
+  padding: 0 0 23px 0;
+  color: #fff;
+  font-family: 'Inter', 'Arial', sans-serif;
+  font-size: 22px;
+  font-weight: 400;
+  line-height: 27px;
+  border-bottom: 1px solid #fff;
+}
+
 .techs__subtitle {
   margin: 0 auto;
   padding: 90px 0 26px 0;
@@ -109,6 +120,14 @@
     grid-template-columns: repeat(2, 84px);
     grid-auto-flow: row;
     gap: 10px;
+  }
+}
+
+@media (max-width: 605px) {
+  .techs__title {
+    padding: 0 0 28px 0;
+    font-size: 18px;
+    line-height: 22px;
   }
 }
 

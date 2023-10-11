@@ -2,9 +2,20 @@
     padding: 110px 0 100px 0;
 }
 
+.student__title {
+    margin: 0;
+    padding: 0 0 23px 0;
+    color: #fff;
+    font-family: 'Inter', 'Arial', sans-serif;
+    font-size: 22px;
+    font-weight: 400;
+    line-height: 27px;
+    border-bottom: 1px solid #fff;
+}
+
 .student__container {
     margin: 0;
-    padding: 0;
+    padding: 66px 0 0 0;
     display: flex;
     justify-content: space-between;
 }
@@ -17,7 +28,7 @@
 
 .student__name {
     margin: 0;
-    padding: 66px 0 0 0;
+    padding: 0;
     display: inline-block;
     color: #fff;
     font-family: 'Inter', 'Arial', sans-serif;
@@ -64,8 +75,8 @@
 }
 
 .student__image {
-    width: 270px;
-    height: auto;
+    max-width: 270px;
+    max-height: 327px;
     align-self: center;
     border-radius: 10px;
 }
@@ -97,7 +108,8 @@
     }
 
     .student__image {
-        width: 255px;
+        max-width: 255px;
+        max-height: 307px;
     }
 }
 
@@ -111,8 +123,8 @@
     }
 
     .student__image {
-        margin: 60px 0 0 0;
-        width: 292px;
+        max-width: 292px;
+        max-height: 352px;
     }
 }
 
@@ -120,6 +132,16 @@
     .student {
         margin: 0 14px;
         padding: 70px 0;
+    }
+
+    .student__title {
+        padding: 0 0 28px 0;
+        font-size: 18px;
+        line-height: 22px;
+    }
+
+    .student__container {
+        padding: 60px 0 0 0;
     }
 
     .student__name {

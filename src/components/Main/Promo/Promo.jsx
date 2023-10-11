@@ -5,7 +5,7 @@ import TitleOfPages from "../../MyComponents/TitleOfPages/TitleOfPages";
 function Promo() {
   return (
     <section className="promo page-main" id="promo">
-      <TitleOfPages title="О проекте" />
+      <TitleOfPages title="О проекте" name="promo" />
       <div className="promo__container">
         <h3 className="promo__subtitle">Дипломный проект включал 5 этапов</h3>
         <p className="promo__text">Составление плана, работу над бэкендом, вёрстку, добавление функциональности и финальные доработки.</p>

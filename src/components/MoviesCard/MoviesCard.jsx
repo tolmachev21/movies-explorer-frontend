@@ -6,7 +6,6 @@ import savedButton from '../../images/saved-button.svg';
 import deleteButton from '../../images/delete.svg';
 
 function ReturnDeleteButton({ cardSavedMovie, cardMovies }) {
-  console.log(cardMovies)
   if (cardSavedMovie) {
     return <input className="movies-card__delete-button" id="delete" type="image" src={deleteButton} width="8px" height="8px" alt="Удалить фильм" />
   } else if (cardMovies) {

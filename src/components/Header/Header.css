@@ -1,5 +1,6 @@
 .header {
   display: flex;
+  justify-content: space-between;
   height: 74px;
 }
 
@@ -56,6 +57,10 @@
   border-radius: 20px;
 }
 
+.header__account:hover {
+  opacity: 70%;
+}
+
 .header__container-movies {
   margin: 0;
   padding: 0;
@@ -89,6 +94,10 @@
   line-height: 16px;
 }
 
+.header__link:hover {
+  opacity: 70%;
+}
+
 .header__link:first-of-type {
   display: none;
 }
@@ -111,6 +120,10 @@
   line-height: 16px;
 }
 
+.header__registration:hover {
+  opacity: 70%;
+}
+
 .header__authorization {
   margin: 0;
   padding: 8px 20px;
@@ -123,6 +136,10 @@
   font-size: 12px;
   line-height: 16px;
   border-radius: 3px;
+}
+
+.header__authorization:hover {
+  opacity: 70%;
 }
 
 @media (max-width: 768px) {

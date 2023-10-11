@@ -1,10 +1,9 @@
 import React from "react";
 import './TitleOfPages.css';
 
-function TitleOfPages({ title }) {
+function TitleOfPages({ title, name }) {
   return (
-    <h2 className="component__title">{title}</h2>
-
+    <h2 className={`${name}__title`}>{title}</h2>
   )
 };
 
