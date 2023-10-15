@@ -4,7 +4,7 @@ import SearchForm from "../SearchForm/SearchForm";
 import MoviesCardList from "../MoviesCardList/MoviesCardList.jsx";
 import moviesApi from "../../utils/MoviesApi";
 
-function Movies({ name, cardSavedMovies, setErrorForm, errorForm }) {
+function Movies({ cardSavedMovies, setErrorForm, errorForm, savedMovies }) {
 
   const [cardMovies, setCardMovies] = useState([]);
   const [cardFoundMovies, setCardFoundMovies] = useState([]);
@@ -18,15 +18,15 @@ function Movies({ name, cardSavedMovies, setErrorForm, errorForm }) {
     localStorage.setItem('shortMovies', JSON.stringify(shortMovies));
     localStorage.setItem('foundMovies', JSON.stringify(foundMovies));
     setFoundForInputMovie(searchForInputMovie);
-    setCardFoundMovies(foundMovies.filter((foundMovie) => {
-      const searchName = foundMovie.nameRU.toLowerCase().includes(searchForInputMovie.toLowerCase());
-      return shortMovies ? (searchName && foundMovie.duration <= 40) : searchName;
+    setCardFoundMovies(foundMovies.filter((movie) => {
+      const searchName = movie.nameRU.toLowerCase().includes(searchForInputMovie.toLowerCase());
+      return shortMovies ? (searchName && movie.duration <= 40) : searchName;
     }));
   }, []);
 
   function handleSearchMovies(searchForInputMovie) {
-    setLoading(true);
     if (cardMovies.length === 0) {
+      setLoading(true);
       moviesApi.getMovies()
         .then((res) => {
           setCardMovies(res);
@@ -57,14 +57,14 @@ function Movies({ name, cardSavedMovies, setErrorForm, errorForm }) {
 
   useEffect(() => {
     if (localStorage.searchForInputMovie && localStorage.shortMovies && localStorage.foundMovies) {
-      const searchForInputMovie = JSON.parse(localStorage.searchForInputMovie);
-      const shortMovies = JSON.parse(localStorage.shortMovies);
-      const foundMovies = JSON.parse(localStorage.foundMovies);
+      const searchForInputMovieInLocal = JSON.parse(localStorage.searchForInputMovie);
+      const shortMoviesInLocal = JSON.parse(localStorage.shortMovies);
+      const foundMoviesInLocal = JSON.parse(localStorage.foundMovies);
       setErrorServer(false);
-      setFoundForInputMovie(searchForInputMovie);
-      setShortMovies(shortMovies);
-      setCardMovies(foundMovies);
-      searchFilter(searchForInputMovie, shortMovies, foundMovies)
+      setFoundForInputMovie(searchForInputMovieInLocal);
+      setShortMovies(shortMoviesInLocal);
+      setCardMovies(foundMoviesInLocal);
+      searchFilter(searchForInputMovieInLocal, shortMoviesInLocal, foundMoviesInLocal);
     };
   }, [searchFilter]);
 
@@ -73,17 +73,17 @@ function Movies({ name, cardSavedMovies, setErrorForm, errorForm }) {
       <SearchForm
         handleSearchMovies={handleSearchMovies}
         handlerShortMovies={handlerShortMovies}
+        shortMovies={shortMovies}
         setErrorForm={setErrorForm}
         errorForm={errorForm}
         foundForInputMovie={foundForInputMovie}
       />
       <MoviesCardList
-        cardMovies={cardMovies}
         cardFoundMovies={cardFoundMovies}
         errorServer={errorServer}
-        name={name}
         cardSavedMovies={cardSavedMovies}
         loading={loading}
+        savedMovies={savedMovies}
       />
     </section>
   )

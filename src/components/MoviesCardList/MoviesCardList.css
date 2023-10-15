@@ -17,8 +17,7 @@
 .movies-card-list__title {
     margin: 0;
     padding: 0;
-    grid-column-start: 2;
-    grid-row-start: span 4;    
+ 
     color: #fff;
     font-family: 'Inter', 'Arial', sans-serif;
     font-size: 29px;
@@ -26,6 +25,19 @@
     line-height: 37px;
     text-align: center;
 }
+
+.movies-card-list__error {
+    margin: 0;
+    padding: 0;
+    color: #fff;
+    grid-column-start: span 2;
+    font-family: 'Inter', 'Arial', sans-serif;
+    font-size: 29px;
+    font-weight: 500;
+    line-height: 37px;
+    text-align: center;
+}
+
 @media (max-width: 1200px) {
     .movies-card-list {
         margin: 0 30px;

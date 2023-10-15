@@ -29,6 +29,14 @@
   opacity: 70%;
 }
 
+.movies__button-agian_hidden {
+  opacity: 0;
+}
+
+.movies__button-agian_hidden:hover {
+  opacity: 0;
+}
+
 @media (max-width: 400px) {
   .movies__button-agian {
     margin: 0 auto;

@@ -16,7 +16,6 @@ import Login from '../Login/Login';
 import NotFound from '../NotFound/NotFound';
 import Movies from '../Movies/Movies';
 import SavedMovies from '../SavedMovies/SavedMovies';
-// import Preloader from '../Preloader/Preloader';
 
 function App() {
 
@@ -65,15 +64,6 @@ function App() {
     setLoggedIn(false);
     navigate('/');
   };
-
-  function handleSearchSavedMovies() {
-    mainApi.getSavedMovies()
-      .then((res) => {
-        console.log(res);
-        // setCardSavedMovies(res);
-      })
-      .catch((err) => `Ошибка при получении данных о сохраненных фильмах ${err}`)
-  }
 
   function handleUpdateUser(data) {
     setLoading(true);
@@ -129,6 +119,36 @@ function App() {
       .finally(() => { setLoading(false) })
   };
 
+  function deleteMovie(movieId) {
+    mainApi.deleteMovie(movieId, localStorage.token)
+      .then(() => {
+        setCardSavedMovies(cardSavedMovies.filter((movie) => {
+          return movie._id !== movieId;
+        }));
+      })
+      .catch((err) => {
+        console.error(`Ошибка при удалении фильма ${err}`);
+      })
+  };
+
+  function savedMovies(film) {
+    const isSave = cardSavedMovies.some(movie => film.id === movie.movieId );
+    const isPressMovie = cardSavedMovies.filter((movie) => {
+      return movie.movieId === film.id;
+    })
+    if (isSave) {
+      deleteMovie(isPressMovie[0]._id)
+    } else {
+      mainApi.addMovie(film, localStorage.token)
+        .then((res) => {
+          setCardSavedMovies([res, ...cardSavedMovies]);
+        })
+        .catch((err) => {
+          console.error(`Ошибка при сохраненнии фильма ${err}`);
+        })
+    };
+  };
+
   return (
     <div className="App">
       <CurrentUserContext.Provider value={currentUser}>
@@ -147,10 +167,11 @@ function App() {
               <ProtectedRoute
                 element={Movies}
                 loggedIn={loggedIn}
-                name="Movies"
                 cardSavedMovies={cardSavedMovies}
                 setErrorForm={setErrorForm}
-                errorForm={errorForm} />
+                errorForm={errorForm} 
+                savedMovies={savedMovies}  
+              />
               <Footer />
             </>
           } />
@@ -161,10 +182,11 @@ function App() {
               <ProtectedRoute
                 element={SavedMovies}
                 loggedIn={loggedIn}
-                name="SavedMovies"
-                cardSavedMovie={cardSavedMovies}
-                handleSearchSavedMovies={handleSearchSavedMovies}
-                loading={loading} />
+                cardSavedMovies={cardSavedMovies}
+                setErrorForm={setErrorForm}
+                errorForm={errorForm}
+                deleteMovie={deleteMovie}
+              />
               <Footer />
             </>
           } />

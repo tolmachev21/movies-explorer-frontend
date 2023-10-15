@@ -20,6 +20,41 @@ class MainApi {
       .then(this._checkResponse)
   }
 
+  addMovie(data, token) {
+    return fetch(`${this._baseUrl}/movies`, {
+      method: 'POST',
+      headers: {
+        "Content-Type": "application/json",
+        "Authorization": `Bearer ${token}`
+      },
+      body: JSON.stringify({
+        country: data.country,
+        director: data.director,
+        duration: `${data.duration}`,
+        year: data.year,
+        description: data.description,
+        image: `https://api.nomoreparties.co/${data.image.url}`,
+        trailer: data.trailerLink,
+        thumbnail: `https://api.nomoreparties.co/${data.image.url}`,
+        nameRU: data.nameRU,
+        nameEN: data.nameEN,
+        movieId: data.id
+      })
+    })
+      .then(this._checkResponse)
+  }
+
+  deleteMovie(movieId, token) {
+    return fetch(`${this._baseUrl}/movies/${movieId}`, {
+      method: 'DELETE',
+      headers: {
+        "Content-Type": "application/json",
+        "Authorization": `Bearer ${token}`
+      },
+    })
+      .then(this._checkResponse)
+  }
+
   getUserInfo(token) {
     return fetch(`${this._baseUrl}/users/me`, {
       headers: {
@@ -40,7 +75,7 @@ class MainApi {
       body: JSON.stringify({
         name: data.name,
         email: data.email,
-      })
+      }),
     })
       .then(this._checkResponse)
   }
