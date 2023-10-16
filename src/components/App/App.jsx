@@ -106,6 +106,7 @@ function App() {
 
   function handleLogin(data) {
     setLoading(true);
+    console.log(data)
     mainApi.authorization(data)
       .then((res) => {
         localStorage.setItem('token', res.token);
@@ -132,7 +133,7 @@ function App() {
   };
 
   function savedMovies(film) {
-    const isSave = cardSavedMovies.some(movie => film.id === movie.movieId );
+    const isSave = cardSavedMovies.some(movie => film.id === movie.movieId);
     const isPressMovie = cardSavedMovies.filter((movie) => {
       return movie.movieId === film.id;
     })
@@ -169,8 +170,8 @@ function App() {
                 loggedIn={loggedIn}
                 cardSavedMovies={cardSavedMovies}
                 setErrorForm={setErrorForm}
-                errorForm={errorForm} 
-                savedMovies={savedMovies}  
+                errorForm={errorForm}
+                savedMovies={savedMovies}
               />
               <Footer />
             </>

@@ -1,10 +1,9 @@
 import React, { useContext, useEffect, useState } from "react";
 import './Profile.css';
+import { EmailRegex } from "../../utils/constants";
 import CurrentUserContext from "../../contexts/CurrentUserContext";
 
 function Profile({ successfully, setSuccessfully, handleUpdateUser, handleExitUser, loading, setErrorForm, errorForm, setNumberErrorForm, numberErrorForm }) {
-
-  console.log(numberErrorForm)
 
   const currentUser = useContext(CurrentUserContext);
   const [userName, setUserName] = useState('');
@@ -44,11 +43,23 @@ function Profile({ successfully, setSuccessfully, handleUpdateUser, handleExitUs
     setErrorForm(false);
     setNumberErrorForm('')
     setSuccessfully(false);
+    handleUniqData(evt);
   };
 
   function handleValidateInput(evt) {
     const validInput = !evt.target.validity.valid;
     return validInput;
+  };
+
+  function handleUniqData(evt) {
+    const input = evt.target;
+    if (currentUser.name === input.value) {
+      setValid(false);
+    };
+
+    if (currentUser.email === evt.target.value) {
+      setValid(false);
+    };
   };
 
   function onUpdateUser(evt) {
@@ -81,6 +92,7 @@ function Profile({ successfully, setSuccessfully, handleUpdateUser, handleExitUs
             id="email"
             type="email"
             name="email"
+            pattern={EmailRegex}
             placeholder="Введите email"
             required
             value={email}

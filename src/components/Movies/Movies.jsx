@@ -79,6 +79,7 @@ function Movies({ cardSavedMovies, setErrorForm, errorForm, savedMovies }) {
         foundForInputMovie={foundForInputMovie}
       />
       <MoviesCardList
+        cardMovies={cardMovies}
         cardFoundMovies={cardFoundMovies}
         errorServer={errorServer}
         cardSavedMovies={cardSavedMovies}

@@ -1,5 +1,6 @@
 import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
+import { EmailRegex } from "../../../utils/constants";
 import './SectionRegisterOrLogin.css';
 import LogoOfPages from '../LogoOfPages/LogoOfPages.jsx'
 
@@ -35,6 +36,7 @@ function SectionRegisterOrLogin({ nameForm, userName, email, password, handleCha
               id="email"
               type="email"
               name="email"
+              pattern={EmailRegex}
               placeholder="Введите email"
               required
               value={email}

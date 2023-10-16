@@ -56,16 +56,6 @@
     background-color: #313131;
     border: none;
     border-radius: 30px;
-    visibility: hidden;
-    opacity: 0;
-    transition: visibility 0s linear 300ms, opacity 300ms;
-}
-
-.movies-card:hover .movies-card__delete-button {
-    visibility: visible;
-    z-index: 1;
-    opacity: 1;
-    transition: visibility 0s linear 300ms, opacity 300ms;
 }
 
 .movies-card__title {

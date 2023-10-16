@@ -3,7 +3,7 @@ import './SavedMovies.css';
 import SearchForm from "../SearchForm/SearchForm";
 import MoviesCardList from "../MoviesCardList/MoviesCardList.jsx";
 
-function SavedMovies({ cardSavedMovies, setErrorForm, errorForm, deleteMovie}) {
+function SavedMovies({ cardSavedMovies, setErrorForm, errorForm, deleteMovie }) {
 
   const [cardFoundMovies, setCardFoundMovies] = useState(cardSavedMovies);
   const [foundForInputMovie, setFoundForInputMovie] = useState('');
@@ -50,7 +50,7 @@ function SavedMovies({ cardSavedMovies, setErrorForm, errorForm, deleteMovie}) {
         cardSavedMovies={cardSavedMovies}
       />
       <MoviesCardList
-      cardFoundMovies={cardFoundMovies}
+        cardFoundMovies={cardFoundMovies}
         cardSavedMovies={cardSavedMovies}
         deleteMovie={deleteMovie}
       />

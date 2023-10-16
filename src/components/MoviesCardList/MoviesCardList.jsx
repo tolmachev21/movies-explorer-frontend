@@ -4,7 +4,7 @@ import MoviesCard from "../MoviesCard/MoviesCard";
 import Preloader from "../Preloader/Preloader";
 import { useLocation } from "react-router-dom";
 
-function MoviesCardList({ cardFoundMovies, cardSavedMovies, loading, errorServer, deleteMovie, savedMovies }) {
+function MoviesCardList({ cardMovies, cardFoundMovies, cardSavedMovies, loading, errorServer, deleteMovie, savedMovies }) {
 
   const { pathname } = useLocation();
   const [count, setCount] = useState('');
@@ -65,6 +65,7 @@ function MoviesCardList({ cardFoundMovies, cardSavedMovies, loading, errorServer
           return (
             <MoviesCard
               cardSavedMovies={cardSavedMovies}
+              deleteMovie={deleteMovie}
               key={film.id}
               film={film}
               savedMovies={savedMovies}
@@ -78,7 +79,7 @@ function MoviesCardList({ cardFoundMovies, cardSavedMovies, loading, errorServer
               film={film}
             />
           )
-        }) : errorServer ? <span className="movies-card-list__error">Во время запроса произошла ошибка. Возможно, проблема с соединением или сервер недоступен. Подождите немного и попробуйте ещё раз</span> : pathname === '/movies' ? <span className="movies-card-list__error">Фильмы не найдены</span> : <span className="movies-card-list__error">Нет сохраненных фильмов</span>}
+        }) : errorServer ? <span className="movies-card-list__error">Во время запроса произошла ошибка. Возможно, проблема с соединением или сервер недоступен. Подождите немного и попробуйте ещё раз</span> : (pathname === '/movies' && cardMovies.length === 0) ? '' : pathname === '/movies' ? <span className="movies-card-list__error">Фильмы не найдены</span> : <span className="movies-card-list__error">Нет сохраненных фильмов</span>}
       </section>
       {pathname === '/movies' ? <div className={`movies__container-again page`}><button className={`movies__button-agian ${count >= cardFoundMovies.length && 'movies__button-agian_hidden'}`} onClick={handleClickAgain}>Ещё</button></div> : ''}
     </>

@@ -5,7 +5,7 @@ import savedButton from '../../images/saved-button.svg';
 import deleteButton from '../../images/delete.svg';
 import { Link, useLocation } from "react-router-dom";
 
-function MoviesCard({ cardSavedMovies, film, savedMovies, deleteMovie}) {
+function MoviesCard({ cardSavedMovies, film, savedMovies, deleteMovie }) {
 
   const { pathname } = useLocation();
   const [press, setPress] = useState(false);
@@ -17,7 +17,7 @@ function MoviesCard({ cardSavedMovies, film, savedMovies, deleteMovie}) {
   }, [cardSavedMovies, film.id, setPress, pathname]);
 
   function handleClick() {
-    if (cardSavedMovies.some(movie => film.id === movie.movieId )) {
+    if (cardSavedMovies.some(movie => film.id === movie.movieId)) {
       setPress(true);
       savedMovies(film);
     } else {
@@ -30,7 +30,7 @@ function MoviesCard({ cardSavedMovies, film, savedMovies, deleteMovie}) {
     if (pathname === '/saved-movies') {
       return <input className="movies-card__delete-button" id="delete" type="image" src={deleteButton} onClick={() => deleteMovie(film._id)} width="8px" height="8px" alt="Удалить фильм" />
     } else if (press) {
-      return <input className="movies-card__saved-button" id="saved" type="image" src={savedButton} width="9px" height="7px" alt="Фильм сохранен" />
+      return <input className="movies-card__saved-button" id="saved" type="image" src={savedButton} onClick={handleClick} width="9px" height="7px" alt="Фильм сохранен" />
     } else {
       return <button className="movies-card__save-button" type="button" onClick={handleClick}>Сохранить</button>
     }
