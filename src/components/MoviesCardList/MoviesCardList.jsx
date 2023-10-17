@@ -1,5 +1,15 @@
 import React, { useEffect, useState } from "react";
 import './MoviesCardList.css';
+
+import {
+  BigScreen,
+  MediumScreen,
+  BigInitialRow,
+  MediumInitialRow,
+  SmallInitialRow,
+  BigAdditionalRow,
+  SmallAdditionalRow,
+} from "../../utils/constants";
 import MoviesCard from "../MoviesCard/MoviesCard";
 import Preloader from "../Preloader/Preloader";
 import { useLocation } from "react-router-dom";
@@ -12,18 +22,18 @@ function MoviesCardList({ cardMovies, cardFoundMovies, cardSavedMovies, loading,
 
   function displayMovies() {
     const numberMovie = {
-      initialRow: 12,
-      additionalRow: 3,
+      initialRow: BigInitialRow,
+      additionalRow: BigAdditionalRow,
     };
 
-    if (window.innerWidth < 1200) {
-      numberMovie.initialRow = 8;
-      numberMovie.additionalRow = 2;
+    if (window.innerWidth < BigScreen) {
+      numberMovie.initialRow = MediumInitialRow;
+      numberMovie.additionalRow = SmallAdditionalRow;
     };
 
-    if (window.innerWidth < 768) {
-      numberMovie.initialRow = 5;
-      numberMovie.additionalRow = 2;
+    if (window.innerWidth < MediumScreen) {
+      numberMovie.initialRow = SmallInitialRow;
+      numberMovie.additionalRow = SmallAdditionalRow;
     };
 
     return numberMovie;

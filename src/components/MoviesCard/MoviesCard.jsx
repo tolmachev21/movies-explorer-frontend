@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import './MoviesCard.css';
 
+import { Hour } from "../../utils/constants";
 import savedButton from '../../images/saved-button.svg';
 import deleteButton from '../../images/delete.svg';
 import { Link, useLocation } from "react-router-dom";
@@ -37,10 +38,10 @@ function MoviesCard({ cardSavedMovies, film, savedMovies, deleteMovie }) {
   };
 
   function durationFilm(time) {
-    if (time < 60) {
+    if (time < Hour) {
       return (`${time}м`);
     } else {
-      return (`${Math.floor(time / 60)}ч ${time % 60}м`);
+      return (`${Math.floor(time / Hour)}ч ${time % Hour}м`);
     };
   };
 

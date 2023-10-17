@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import './Header.css';
 
 import logo from '../../images/logo.svg'
@@ -10,11 +10,11 @@ function LoggedInContainer({ loggedIn, openMenu, handleClosingMenu }) {
   if (loggedIn) {
     return (
       <nav className={`header__navigate ${openMenu ? "header__navigate_open" : ''}`}>
-        <div className="header__container-movies">
-          <Link className="header__link" to={"/"} onClick={handleClosingMenu}>Главная</Link>
-          <Link className="header__link" to={"/movies"} onClick={handleClosingMenu}>Фильмы</Link>
-          <Link className="header__link" to={"/saved-movies"} onClick={handleClosingMenu}>Сохраненные фильмы</Link>
-        </div>
+        <nav className="header__container-movies">
+          <NavLink className="header__link" to={"/"} onClick={handleClosingMenu}>Главная</NavLink>
+          <NavLink className="header__link" to={"/movies"} onClick={handleClosingMenu}>Фильмы</NavLink>
+          <NavLink className="header__link" to={"/saved-movies"} onClick={handleClosingMenu}>Сохраненные фильмы</NavLink>
+        </nav>
         <Link className="header__account" to={"/profile"} onClick={handleClosingMenu}>Аккаунт</Link>
         <input className="header__close-button"
           type="image"
@@ -28,10 +28,10 @@ function LoggedInContainer({ loggedIn, openMenu, handleClosingMenu }) {
     )
   } else {
     return (
-      <div className="header__container-auth">
+      <nav className="header__container-auth">
         <Link className="header__registration" to={"/signup"}>Регистрация</Link>
         <Link className="header__authorization" to={"/signin"}>Войти</Link>
-      </div>
+      </nav>
     )
   }
 };
