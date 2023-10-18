@@ -1,6 +1,7 @@
 .movies {
   margin: 0;
   padding: 0;
+  min-height: calc(100vh - 246px);
 }
 
 .movies__container-again {
@@ -27,6 +28,14 @@
 
 .movies__button-agian:hover {
   opacity: 70%;
+}
+
+.movies__button-agian_hidden {
+  opacity: 0;
+}
+
+.movies__button-agian_hidden:hover {
+  opacity: 0;
 }
 
 @media (max-width: 400px) {

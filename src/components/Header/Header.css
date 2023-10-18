@@ -65,6 +65,9 @@
   margin: 0;
   padding: 0;
   align-self: center;
+  display: flex;
+  column-gap: 16px;
+  justify-content: center;
   flex-grow: 1;
   text-align: center;
 }
@@ -84,7 +87,7 @@
 
 .header__link {
   margin: 0;
-  padding: 0 16px 0 0;
+  padding: 0 0 0 0;
   color: #fff;
   text-align: center;
   text-decoration: none;
@@ -92,6 +95,11 @@
   font-weight: 400;
   font-size: 13px;
   line-height: 16px;
+}
+
+.header__link.active {
+  padding-bottom: 4px;
+  border-bottom: 2px solid #fff;
 }
 
 .header__link:hover {
@@ -186,6 +194,7 @@
     padding: 159px 0 0 0;
     display: flex;
     flex-direction: column;
+    justify-content: flex-start;
     row-gap: 28px;
     text-align: center;
   }
